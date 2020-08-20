@@ -1,0 +1,6 @@
+c:\BenfordLawCSharp\BenfordLawCSharp\bin\Debug\BenfordLawCSharp.exe.config
+c:\BenfordLawCSharp\BenfordLawCSharp\bin\Debug\BenfordLawCSharp.exe
+c:\BenfordLawCSharp\BenfordLawCSharp\bin\Debug\BenfordLawCSharp.pdb
+c:\BenfordLawCSharp\BenfordLawCSharp\obj\Debug\BenfordLawCSharp.csprojResolveAssemblyReference.cache
+c:\BenfordLawCSharp\BenfordLawCSharp\obj\Debug\BenfordLawCSharp.exe
+c:\BenfordLawCSharp\BenfordLawCSharp\obj\Debug\BenfordLawCSharp.pdb
