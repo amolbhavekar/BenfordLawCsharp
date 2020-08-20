@@ -103,7 +103,7 @@ namespace BenfordModel
             double total = firstDigitFrequency.Sum();
             double frequencyPercentage;
             double benfordPercentage;
-            int result = 0;
+            int result = 1;
 
             int firstDigitOfNewAmount = int.Parse(vendorAmount.ToString().Substring(0, 1));
 
@@ -117,21 +117,17 @@ namespace BenfordModel
                 {
                     //Console.WriteLine("Review transactions with a first digit of: " + i);
                     if (firstDigitOfNewAmount == i)
-                        //Console.WriteLine("0");
                         result = 0;
-                    else
-                        //Console.WriteLine("1");
-                        result = 1;
                 }
                 else
                 {
                     //Console.WriteLine("1");
-                    result = 1;
+                    
                 }
 
             }
 
-            Console.WriteLine("Complete.");
+            Console.WriteLine(result);
         }
 
         private static double[] GetFirstDigitFrequency(List<double> allTransactions)
