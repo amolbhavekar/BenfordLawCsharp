@@ -42,7 +42,7 @@ namespace BenfordModel
             //Individual vendor analysis with transactions more than 30 
             foreach (var df in dfperVendor)
             {
-                //OutputResults(df.Vendor, df.firstDigitFrequency);
+                OutputResults(df.Vendor, df.firstDigitFrequency);
             }
 
             while (true)
@@ -82,6 +82,8 @@ namespace BenfordModel
             double total = firstDigitFrequency.Sum();
             double frequencyPercentage;
             double benfordPercentage;
+            double allowedTolerance = 0.5;
+            bool benfordLawFollowed = true;
 
             Console.WriteLine("This analysis is for Vendor :" + vendor);
             for (int i = 1; i < 10; i++)
@@ -91,9 +93,25 @@ namespace BenfordModel
                 frequencyPercentage = firstDigitFrequency[i] / total;
                 benfordPercentage = Math.Log10(1 + 1.0 / i);
                 Console.WriteLine("position: " + i + " frequency : " + frequencyPercentage + " Benford Percentage :" + benfordPercentage);
+
+                if ((frequencyPercentage < (benfordPercentage * (1 - allowedTolerance))) || (frequencyPercentage > (benfordPercentage * (1 + allowedTolerance))))
+                {
+                    //Console.WriteLine("Review transactions with a first digit of: " + i);
+                    benfordLawFollowed = false;
+
+
+                }
             }
 
-            Console.WriteLine("Complete.");
+            if (benfordLawFollowed)
+            {
+                Console.WriteLine(vendor + " follows benford law");
+            }
+            
+            Console.WriteLine();
+            Console.WriteLine();
+            Console.WriteLine();
+            
         }
 
 
